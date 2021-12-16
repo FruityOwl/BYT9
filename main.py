@@ -1,5 +1,5 @@
-from BYT9 import AI
-from BYT9.character import Character
+import AI
+import Сharacter
 
 
 if __name__ == "__main__":
@@ -18,5 +18,5 @@ if __name__ == "__main__":
         ch_class = "Paladin"
     print("Choose stats", AI.dice_roll())
 
-    char = Character(name, ch_class)
+    char = Сharacter.Character(name, ch_class)
     char.info()
