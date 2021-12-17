@@ -58,3 +58,8 @@ class Enemy:
 
     def enemy_use_ability(self):
         pass
+
+    def enemy_info(self):
+        print('ID:', self.enemy_id, '\nName:', self.enemy_name, '\nType:', self.enemy_type,
+              '\nStats:', self.enemy_stats, 'Attacks:', self.enemy_attacks,
+              '\nAbilities:', self.enemy_abilities)

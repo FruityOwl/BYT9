@@ -5,6 +5,7 @@ class Advertiser:
         self.adv_ad_type = adv_ad_type
 
     # Setters
+
     def set_adv_id(self, adv_id):
         self.adv_id = adv_id
 
@@ -15,13 +16,14 @@ class Advertiser:
         self.adv_ad_type = adv_ad_type
 
     # Getters
-    def get_adv_id(self, adv_id):
+
+    def get_adv_id(self):
         return self.adv_id
 
-    def get_adv_company(self, adv_company):
+    def get_adv_company(self):
         return self.adv_company
 
-    def get_adv_ad_type(self, adv_ad_type):
+    def get_adv_ad_type(self):
         return self.adv_ad_type
 
     # Methods
