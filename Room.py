@@ -25,7 +25,7 @@ class Room:
 
     def get_room_reward(self):
         return self.room_reward
-    
+
     # Methods
 
     def give_reward(self, char):

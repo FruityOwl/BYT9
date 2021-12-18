@@ -1,3 +1,6 @@
+import AI
+
+
 class Enemy:
     def __init__(self, enemy_id, enemy_name, enemy_type, enemy_icon, enemy_stats, enemy_attacks, enemy_abilities):
         self.enemy_id = enemy_id
@@ -53,8 +56,13 @@ class Enemy:
         return self.enemy_abilities
 
     # Methods
-    def enemy_attack(self):
-        pass
+
+    def enemy_attack(self, char):
+        if AI.dice_roll() > char.get_char_ac():
+            damage = AI.attack_dice(self.enemy_attacks.get_attack_damage())
+            char.char_damage(damage)
+        else:
+            pass
 
     def enemy_use_ability(self):
         pass
