@@ -1,5 +1,6 @@
 import unittest
 
+from AI import dice_roll, ability_check, attack_dice
 from Armour import Armour
 from Attack import Attack
 from Advertiser import Advertiser
@@ -40,7 +41,7 @@ class TestCharacter(unittest.TestCase):
     def test_set_level(self):
         test_character.set_level(10)
         self.assertEqual(test_character.get_level(), 10)
-        
+
     def test_set_stats(self):
         test_stats_1 = Stats(12, 12, 12, 12, 18, 14)
         test_character.set_char_stats(test_stats_1)
@@ -117,8 +118,7 @@ class TestEnemy(unittest.TestCase):
     def test_enemy_attack(self):
         # Passes from time to time due to random factor of method
         test_enemy.enemy_attack(test_character)
-        print(test_character.get_health_points())
-        self.assertNotEqual(test_character.get_health_points(), 10)
+        self.assertNotEqual(test_character.get_health_points(), test_character.get_char_ac())
 
 
 class TestAdvertiser(unittest.TestCase):
@@ -187,6 +187,18 @@ class TestArmour(unittest.TestCase):
     def test_set_armour_class(self):
         test_armour.set_armour_class(17)
         self.assertEqual(test_armour.get_armour_class(), 17)
+
+
+class TestAI(unittest.TestCase):
+
+    def test_dice_roll(self):
+        self.assertIsNotNone(dice_roll())
+
+    def test_ability_check(self):
+        self.assertIsNotNone(ability_check(test_stats.get_dex_modifier()))
+
+    def test_attack_dice(self):
+        self.assertIsNotNone(attack_dice(8))
 
 
 if __name__ == '__main__':

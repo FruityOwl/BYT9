@@ -1,4 +1,4 @@
-# Stats are just like from D&D, so 12 means +1 to this stat 8 means -1 and so on
+# Stats are just like from D&D, so 12 means +1 to this stat, 8 means -1 and so on
 
 class Stats:
     def __init__(self, strength, dexterity, constitution, intelligence, wisdom, charisma):
