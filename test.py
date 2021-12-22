@@ -31,8 +31,8 @@ class TestCharacter(unittest.TestCase):
         self.assertEqual(test_character.get_name(), 'FruityOwl')
 
     def test_set_health_points(self):
-        test_character.set_health_points(0)
-        self.assertEqual(test_character.get_health_points(), 0)
+        test_character.set_cur_health_points(0)
+        self.assertEqual(test_character.get_cur_health_points(), 0)
 
     def test_set_char_class(self):
         test_character.set_char_class('Wizard')

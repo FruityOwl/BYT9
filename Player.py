@@ -1,3 +1,7 @@
+def create_character():
+    pass
+
+
 def start_new_game():
     pass
 

@@ -5,7 +5,8 @@ class Character:
     def __init__(self, char_name, char_stats, char_class):
         self.char_name = char_name
         self.char_stats = char_stats
-        self.health_points = 10
+        self.cur_health_points = 10
+        self.max_health_points = 10
         self.char_ac = 10 + char_stats.get_dex_modifier()
         self.char_class = char_class
         self.level = 1
@@ -15,8 +16,11 @@ class Character:
     def set_name(self, char_name):
         self.char_name = char_name
 
-    def set_health_points(self, health_points):
-        self.health_points = health_points
+    def set_max_health_points(self, max_health_points):
+        self.max_health_points = max_health_points
+
+    def set_cur_health_points(self, max_health_points):
+        self.max_health_points = max_health_points
 
     def set_char_class(self, char_class):
         self.char_class = char_class
@@ -35,8 +39,11 @@ class Character:
     def get_name(self):
         return self.char_name
 
-    def get_health_points(self):
-        return self.health_points
+    def get_max_health_points(self):
+        return self.max_health_points
+
+    def get_cur_health_points(self):
+        return self.cur_health_points
 
     def get_char_class(self):
         return self.char_class
@@ -56,7 +63,7 @@ class Character:
         self.level = self.level + 1
 
     def info(self):
-        print("Name:", self.char_name, "\nClass:", self.char_class, self.level, "\nHealth points:", self.health_points)
+        print("Name:", self.char_name, "\nClass:", self.char_class, self.level, "\nHealth points:", self.max_health_points)
 
     def char_damage(self, damage):
-        self.health_points = self.get_health_points() - damage
+        self.max_health_points = self.get_health_points() - damage
